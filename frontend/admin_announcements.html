@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EVENTRA - Admin Duyurular</title>
+  <link rel="stylesheet" href="assets/css/style_postlogin.css" />
+  <script src="assets/js/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <aside>
+    <img src="assets/images/eventra_siyahlogo.png" alt="Eventra Logo" />
+    <nav>
+      <a href="admin_announcements.html" class="active">Duyurular</a>
+      <a href="admin_users.html">Kullanıcılar</a>
+      <a href="admin_events.html">Etkinlikler</a>
+    </nav>
+    <div class="footer-links">
+      <a href="index.html">Anasayfa</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <div class="content-wrapper">
+      <h2>Duyurular</h2>
+
+      <!-- Duyuru Listesi -->
+      <div class="announcement-list">
+        <!-- Duyurular JS ile buraya gelecek -->
+      </div>
+
+      <!-- Yeni Duyuru Ekleme Formu -->
+      <div class="add-announcement">
+        <h3>Yeni Duyuru Ekle</h3>
+        <form action="add_announcement.php" method="POST">
+          <input type="text" name="title" placeholder="Duyuru Başlığı" required />
+          <textarea name="message" placeholder="Duyuru içeriği..." required></textarea>
+          <button type="submit">Ekle</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

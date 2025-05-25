@@ -1,0 +1,368 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F61D33;
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000000;
+  padding: 15px 20px;
+}
+
+.top-link {
+  margin-right: 25px;
+  text-decoration: none;
+  color: white;
+  background-color: #5e1e83;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.top-link:hover {
+  background-color: #7d41a0;
+}
+
+header .logo {
+  width: auto;
+  height: 100px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar */
+aside {
+  width: 220px;
+  background-color: #1e1e1e;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+}
+
+aside img {
+  height: 220px;
+  margin-bottom: 20px;
+}
+
+aside nav a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #333;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+aside nav a:hover {
+  background-color: #555;
+}
+
+.footer-links {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.footer-links a:hover {
+  background-color: #222;
+}
+/* İçerik düzenleme */
+main .content-wrapper {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.announcement-list {
+  margin-bottom: 2rem;
+}
+
+.announcement-card {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-left: 6px solid #d32f2f;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.announcement-card h3 {
+  margin-top: 0;
+}
+
+.delete-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.add-announcement form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.add-announcement input,
+.add-announcement textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.add-announcement button {
+  align-self: flex-start;
+  background-color: #2e7d32;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.user-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.user-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.user-card p {
+  margin: 0.3rem 0;
+}
+
+.user-card .italic {
+  font-style: italic;
+  color: green;
+}
+
+.approve-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.approve-btn:hover {
+  background-color: #0056b3;
+}
+
+
+main {
+  margin-left: 260px;
+  padding: 40px 20px;
+  width: calc(100% - 240px);
+  background-color: #f61d33;
+  color: black;
+}
+
+section {
+  display: none;
+  max-width: 750px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+section.active {
+  display: block;
+}
+
+.card {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Buton stilleri */
+.btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-red { background: #e74c3c; color: white; }
+.btn-blue { background: #5e1e83; color: white; }
+.btn-blue:hover { background: #7d41a0; }
+.btn-gray { background: #ccc; color: #666; cursor: not-allowed; }
+.btn-green { background: #2ecc71; color: white; }
+.btn-yellow { background: #f1c40f; color: black; }
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+}
+
+.profile-card {
+    background-color: white;
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    max-width: 90%;
+}
+
+.profile-card h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.profile-details p {
+    font-size: 1.1rem;
+    margin: 0.6rem 0;
+}
+
+.status.approved {
+    color: green;
+    font-weight: bold;
+}
+
+.status.pending {
+    color: orange;
+    font-weight: bold;
+}
+
+
+/* Form alanları */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 50px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #5e1e83;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #7d41a0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin: 40px 0 20px;
+  color: #1e1e1e;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.user-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.user-card p {
+  margin: 0.3rem 0;
+}
+
+.user-card button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+.user-card button:hover:enabled {
+  background-color: #1e7e34;
+}
+.user-card button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

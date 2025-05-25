@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile - EVENTRA</title>
+    <link rel="stylesheet" href="assets/css/style_postlogin.css" />
+</head>
+<body>
+
+    <aside>
+    <img src="assets/images/eventra_siyahlogo.png" alt="Eventra Logo" />
+    <nav>
+      <a href="user_announcements.html" class="active">Duyurular</a>
+      <a href="user_events.html">Etkinlikler</a>
+      <a href="user_profile.html">Profilim</a>
+    </nav>
+    <div class="footer-links">
+      <a href="index.html">Anasayfa</a>
+    </div>
+  </aside>
+
+    <main class="profile-container">
+        <div class="profile-card">
+            <h2>👤 Profil Bilgileriniz</h2>
+            <div class="profile-details">
+                <p><strong>Ad Soyad:</strong> {{ user.full_name }}</p>
+                <p><strong>E-posta:</strong> {{ user.email }}</p>
+                <p><strong>Hesap Oluşturma Tarihi:</strong> {{ user.created_at.strftime('%d %B %Y') }}</p>
+                <p><strong>Durum:</strong> 
+                    {% if user.is_approved %}
+                        <span class="status approved">✔ Onaylı</span>
+                    {% else %}
+                        <span class="status pending">⏳ Onay Bekliyor</span>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
