@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>EVENTRA - Admin Etkinlikler</title>
+  <title>EVENTRA - User Etkinlikler</title>
   <link rel="stylesheet" href="assets/css/style_postlogin.css" />
-  <script src="assets/js/script.js"></script>
+  <script src="assets/js/script.js" defer></script> <!-- Etkinlik script dosyası -->
 </head>
 <body>
 
@@ -16,7 +16,6 @@
       <a href="user_announcements.html">Duyurular</a>
       <a href="user_events.html" class="active">Etkinlikler</a>
       <a href="user_profile.html">Profilim</a>
-      
     </nav>
     <div class="footer-links">
       <a href="index.html">Anasayfa</a>
@@ -25,9 +24,41 @@
 
   <!-- Main Content -->
   <main>
-    <h2>Etkinlikler</h2>
-    <p>Etkinlikleri yönetebileceğiniz ekran.</p>
-  </main>
+    <div class="content-wrapper">
+      <div class="cart-link-bar">
+        <a href="cart.html" class="cart-link">
+          <img src="assets/images/cart_icon.png" alt="Sepetim" class="cart-icon" />
+          <span>Sepetim</span>
+        </a>
+      </div>
+      <h2>Etkinlikler</h2>
 
+      <!-- Kategori Filtreleme -->
+      <div class="category-filter">
+        <h3>Kategori Seçin</h3>
+        <div class="radio-group">
+          <input type="radio" id="all" name="category" value="all" checked>
+          <label for="all">Tümü</label>
+
+          <input type="radio" id="theatre" name="category" value="tiyatro">
+          <label for="theatre">Tiyatro</label>
+
+          <input type="radio" id="music" name="category" value="müzik">
+          <label for="music">Müzik</label>
+
+          <input type="radio" id="sports" name="category" value="spor">
+          <label for="sports">Spor</label>
+
+          <input type="radio" id="technology" name="category" value="teknoloji">
+          <label for="technology">Teknoloji</label>
+        </div>
+      </div>
+
+      <!-- Etkinlik Listesi -->
+      <div class="event-list">
+        <!-- Etkinlikler JS ile buraya gelecek -->
+      </div>
+    </div>
+  </main>
 </body>
 </html>

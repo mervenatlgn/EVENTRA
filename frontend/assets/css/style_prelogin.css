@@ -76,15 +76,7 @@ header nav a:hover {
   background-color: #222;
 }
 
-/* change-password-body gibi özel sınıfla arka planı belirginleştir */
-.change-password-body {
-    background-color: #8B0000; /* koyu kırmızı tonu */
-    font-family: 'Segoe UI', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+
 
 /* form kutusu */
 .form-box {
@@ -149,6 +141,58 @@ form button {
 
 form button:hover {
     background-color: #7d41a0;
+}
+
+/* İlgi Alanları Stilleri */
+.interests-section {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.interests-section > label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checkbox-group div {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.checkbox-group div:hover {
+    background-color: #f0f0f0;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+    flex: 1;
 }
 
 footer {

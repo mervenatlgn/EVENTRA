@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>User Profile - EVENTRA</title>
     <link rel="stylesheet" href="assets/css/style_postlogin.css" />
+    <script src="assets/js/script.js" defer></script>
 </head>
 <body>
 
@@ -23,16 +24,10 @@
         <div class="profile-card">
             <h2>👤 Profil Bilgileriniz</h2>
             <div class="profile-details">
-                <p><strong>Ad Soyad:</strong> {{ user.full_name }}</p>
-                <p><strong>E-posta:</strong> {{ user.email }}</p>
-                <p><strong>Hesap Oluşturma Tarihi:</strong> {{ user.created_at.strftime('%d %B %Y') }}</p>
-                <p><strong>Durum:</strong> 
-                    {% if user.is_approved %}
-                        <span class="status approved">✔ Onaylı</span>
-                    {% else %}
-                        <span class="status pending">⏳ Onay Bekliyor</span>
-                    {% endif %}
-                </p>
+                <p><strong>Ad Soyad:</strong> </p>
+                <p><strong>E-posta:</strong> </p>
+                <p><strong>İlgi Alanları:</strong> </p>
+                <p><strong>Hesap durumu:</strong> </p>
             </div>
         </div>
     </main>

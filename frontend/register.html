@@ -27,6 +27,31 @@
             <label for="fullname">Ad Soyad:</label><br />
             <input type="text" id="fullname" name="fullname" required /><br />
 
+            <div class="interests-section">
+                <label>İlgi Alanları:</label>
+                <div class="checkbox-group">
+                    <div>
+                        <input type="checkbox" id="music" name="interests[]" value="müzik">
+                        <label for="music">Müzik</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="theatre" name="interests[]" value="tiyatro">
+                        <label for="theatre">Tiyatro</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="sports" name="interests[]" value="spor">
+                        <label for="sports">Spor</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="technology" name="interests[]" value="teknoloji">
+                        <label for="technology">Teknoloji</label>
+                    </div>
+                </div>
+            </div>
+
             <button type="submit">Hemen Kaydol!</button>
         </form>
 

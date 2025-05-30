@@ -101,7 +101,16 @@ aside nav a:hover {
 .footer-links a:hover {
   background-color: #222;
 }
-/* İçerik düzenleme */
+
+main {
+  margin-left: 260px;
+  padding: 40px 20px;
+  width: calc(100% - 240px);
+  background-color: #f61d33;
+  color: black;
+}
+
+/* Ortak içerik kutusu */
 main .content-wrapper {
   max-width: 800px;
   margin: 2rem auto;
@@ -111,6 +120,7 @@ main .content-wrapper {
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
+/* Duyuru listesi ve kartları */
 .announcement-list {
   margin-bottom: 2rem;
 }
@@ -128,6 +138,40 @@ main .content-wrapper {
   margin-top: 0;
 }
 
+/* Etkinlik listesi ve kartları */
+.event-list {
+  margin-bottom: 2rem;
+}
+
+.event-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  border-left: 6px solid #2e7d32;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  position: relative;
+}
+
+.event-card-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 70%;
+}
+
+.event-card .btn.btn-blue {
+  margin-left: 2rem;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.event-card h3 {
+  margin-top: 0;
+}
+
+/* Ortak sil butonu */
 .delete-btn {
   position: absolute;
   top: 1rem;
@@ -140,21 +184,26 @@ main .content-wrapper {
   border-radius: 6px;
 }
 
-.add-announcement form {
+/* Duyuru & Etkinlik ekleme formları */
+.add-announcement form,
+.add-event form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .add-announcement input,
-.add-announcement textarea {
+.add-announcement textarea,
+.add-event input,
+.add-event textarea {
   padding: 10px;
   font-size: 1rem;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 
-.add-announcement button {
+.add-announcement button,
+.add-event button {
   align-self: flex-start;
   background-color: #2e7d32;
   color: white;
@@ -165,165 +214,7 @@ main .content-wrapper {
   font-weight: bold;
 }
 
-.user-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-.user-card {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.user-card h4 {
-  margin: 0 0 0.5rem;
-  font-size: 1.2rem;
-}
-
-.user-card p {
-  margin: 0.3rem 0;
-}
-
-.user-card .italic {
-  font-style: italic;
-  color: green;
-}
-
-.approve-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.approve-btn:hover {
-  background-color: #0056b3;
-}
-
-
-main {
-  margin-left: 260px;
-  padding: 40px 20px;
-  width: calc(100% - 240px);
-  background-color: #f61d33;
-  color: black;
-}
-
-section {
-  display: none;
-  max-width: 750px;
-  margin: auto;
-  background: white;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
-}
-
-section.active {
-  display: block;
-}
-
-.card {
-  background: #fff;
-  padding: 15px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Buton stilleri */
-.btn {
-  padding: 6px 12px;
-  font-size: 14px;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-red { background: #e74c3c; color: white; }
-.btn-blue { background: #5e1e83; color: white; }
-.btn-blue:hover { background: #7d41a0; }
-.btn-gray { background: #ccc; color: #666; cursor: not-allowed; }
-.btn-green { background: #2ecc71; color: white; }
-.btn-yellow { background: #f1c40f; color: black; }
-
-.profile-container {
-    display: flex;
-    justify-content: center;
-    padding: 3rem;
-}
-
-.profile-card {
-    background-color: white;
-    padding: 2rem 3rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    max-width: 90%;
-}
-
-.profile-card h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #333;
-}
-
-.profile-details p {
-    font-size: 1.1rem;
-    margin: 0.6rem 0;
-}
-
-.status.approved {
-    color: green;
-    font-weight: bold;
-}
-
-.status.pending {
-    color: orange;
-    font-weight: bold;
-}
-
-
-/* Form alanları */
-form input {
-  width: 100%;
-  padding: 10px;
-  margin: 6px 0 50px 0px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  background-color: #5e1e83;
-  border: none;
-  padding: 10px 15px;
-  color: white;
-  font-size: 16px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-form button:hover {
-  background-color: #7d41a0;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  margin: 40px 0 20px;
-  color: #1e1e1e;
-}
-
+/* Kullanıcı listesi ve kartı */
 .user-list {
   display: flex;
   flex-direction: column;
@@ -362,7 +253,420 @@ footer {
 .user-card button:hover:enabled {
   background-color: #1e7e34;
 }
+
 .user-card button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+}
+
+.user-card .italic {
+  font-style: italic;
+  color: green;
+}
+
+.approve-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.approve-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Form alanları */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 50px 0px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #5e1e83;
+  border: none;
+  padding: 10px 15px;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #7d41a0;
+}
+
+/* Genel kartlar */
+.card {
+  background: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Butonlar */
+.btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+.btn-red { background: #e74c3c; color: white; }
+.btn-blue { background: #5e1e83; color: white; }
+.btn-blue:hover { background: #7d41a0; }
+.btn-gray { background: #ccc; color: #666; cursor: not-allowed; }
+.btn-green { background: #2ecc71; color: white; }
+.btn-yellow { background: #f1c40f; color: black; }
+
+/* Profil Sayfası Stilleri */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.profile-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  background-color: #5e1e83;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-text {
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.profile-name {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+.profile-details {
+  margin-bottom: 2rem;
+}
+
+.detail-group {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.detail-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.detail-group label {
+  display: block;
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.detail-group p {
+  margin: 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.interests-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.interest-tag {
+  background-color: #f0f0f0;
+  color: #5e1e83;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: 500;
+}
+
+.status.approved {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.status.pending {
+  background-color: #fff3e0;
+  color: #f57c00;
+}
+
+.profile-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-primary {
+  background-color: #5e1e83;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #7d41a0;
+}
+
+#changePasswordSection {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#changePasswordSection.hidden {
+  display: none;
+}
+
+#changePasswordSection h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+#changePasswordForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#changePasswordForm input {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+#changePasswordForm input:focus {
+  outline: none;
+  border-color: #5e1e83;
+  box-shadow: 0 0 0 2px rgba(94, 30, 131, 0.2);
+}
+
+#changePasswordForm button {
+  background-color: #5e1e83;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#changePasswordForm button:hover {
+  background-color: #7d41a0;
+}
+
+/* Kategori Seçimi Stilleri */
+.category-selection {
+    margin: 15px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.category-selection > label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.radio-group input[type="radio"] {
+    width: auto;
+    margin: 0;
+}
+
+.radio-group label {
+    display: inline-block;
+    margin: 0;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.radio-group label:hover {
+    background-color: #e9ecef;
+}
+
+/* Kategori Filtreleme Stilleri */
+.category-filter {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.category-filter h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.add-event select {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.add-event select:hover {
+  border-color: #5e1e83;
+}
+
+.add-event select:focus {
+  outline: none;
+  border-color: #5e1e83;
+  box-shadow: 0 0 0 2px rgba(94, 30, 131, 0.2);
+}
+
+.cart-section {
+  margin-bottom: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  padding: 1.5rem 1rem;
+}
+
+.cart-section h3 {
+  margin-top: 0;
+  color: #5e1e83;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cart-item {
+  background-color: #f4f4f4;
+  border-left: 6px solid #5e1e83;
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-item-content {
+  flex: 1;
+}
+
+.cart-item .btn-remove {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  margin-left: 2rem;
+  white-space: nowrap;
+}
+
+.cart-item .btn-remove:hover {
+  background: #c0392b;
+}
+
+.cart-link-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  background: #5e1e83;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(94,30,131,0.08);
+  transition: background 0.2s;
+}
+.cart-link:hover {
+  background: #7d41a0;
+}
+.cart-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  filter: brightness(0) invert(1);
+}
+
+.cart-total {
+  margin-top: 2rem;
+  padding: 1.2rem 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #5e1e83;
+  text-align: right;
+  box-shadow: 0 1px 4px rgba(94,30,131,0.06);
 }

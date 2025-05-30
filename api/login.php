@@ -1,17 +1,22 @@
 <?php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
+ini_set('session.cookie_samesite', 'Lax');
+ini_set('session.cookie_secure', 'Off'); // HTTP için Off, HTTPS için On
+$origin = isset($_SERVER['HTTP_ORIGIN']) ? $_SERVER['HTTP_ORIGIN'] : '';
+header("Access-Control-Allow-Origin: $origin");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
+session_start();
 
 $data = json_decode(file_get_contents("php://input"), true);
 
 $email = trim($data['email'] ?? '');
 $password = trim($data['password'] ?? '');
 
-// Admin kontrolü (şifre sabit olduğu için ayrı kontrol)
+// Admin kontrolü
 if ($email === 'merve@gmail.com' && $password === '7777') {
     echo json_encode(['success' => true, 'is_admin' => true]);
     exit;
@@ -23,7 +28,7 @@ if ($conn->connect_error) {
     exit;
 }
 
-$stmt = $conn->prepare("SELECT id, fullname, password, is_approved, changed_password FROM users WHERE email = ?");
+$stmt = $conn->prepare("SELECT id, fullname, password, is_approved, changed_password, interests FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -41,9 +46,14 @@ if ($row = $result->fetch_assoc()) {
                 exit;
             }
 
-            session_start();
             $_SESSION['user_id'] = $row['id'];
             $_SESSION['fullname'] = $row['fullname'];
+            // Sepeti sıfırla
+            $conn->query("UPDATE events SET is_in_cart = 0");
+            $_SESSION['active_user'] = $row['id'];
+
+            // İlgi alanlarını diziye çevir
+            $interests = !empty($row['interests']) ? explode(',', $row['interests']) : [];
 
             echo json_encode([
                 'success' => true,
@@ -52,7 +62,8 @@ if ($row = $result->fetch_assoc()) {
                     'id' => $row['id'],
                     'fullname' => $row['fullname'],
                     'email' => $email,
-                    'changed_password' => $row['changed_password']
+                    'changed_password' => $row['changed_password'],
+                    'interests' => $interests
                 ]
             ]);
         } else {
